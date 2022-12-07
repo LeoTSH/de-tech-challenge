@@ -8,6 +8,7 @@ Websites Used:
 * https://www.mockaroo.com/: To generate fake emails
 * https://www.coderstool.com/fake-test-identity-data: To generate mobile numbers
 * https://onlinerandomtools.com/generate-random-date: To generate birthdays
+* https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html: To run Airflow in Docker
 
 Mock Dataset Columns:
 * name
@@ -43,3 +44,8 @@ Assumptions:
     * For example: Mohammad Rohan Bin Mohamamad Andika
         * Surname: Bin Mohamamad Andika, Given name: Mohammad Rohan
 * Formats and combinations of names are not exhaustive, an analysis of production data will be required to have a better picture
+* Log messages will be displayed on the terminal
+
+Comments:
+* Jupyter notebook was used to develop the code and the finalized version copied to .py files
+* I had issues getting the logger to create the log filebut was able to via Jupyer notebook
