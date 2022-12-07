@@ -6,12 +6,10 @@ from hashlib import sha256
 
 # Logging config
 log_date = datetime.strftime(datetime.now(), "%Y%m%d")
-logging.basicConfig(
-    filename=f"./logs/{log_date}.log",
-    format="%(asctime)s - %(levelname)s - %(message)s",
-    datefmt='%d-%b-%y %H:%M:%S', 
-    level=logging.DEBUG
-)
+logger = logging.getLogger('__name__')
+formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
+logger.setLevel(logging.DEBUG)
+
 
 def check_mobile(data: pd.Series) -> pd.Series:
     """
@@ -31,7 +29,7 @@ def check_mobile(data: pd.Series) -> pd.Series:
     
     try:
         mobile = data['mobile']
-        logging.info(f"Processing number: {mobile}")
+        logger.info(f"Processing number: {mobile}")
         result = None 
         alphabet_pattern = re.compile(r"[A-Za-z]+")
 
@@ -44,9 +42,9 @@ def check_mobile(data: pd.Series) -> pd.Series:
         mobile = mobile if not mobile.startswith("65") else mobile[2:]
         result = mobile if len(mobile) == 8 else "False"
     except Exception as e:
-        logging.error("Execption occurred", exc_info=True)
+        logger.error("Execption occurred", exc_info=True)
     finally:
-        logging.info(f"Mobile result: {result}")
+        logger.info(f"Mobile result: {result}")
         return result
 
 
@@ -71,16 +69,16 @@ def check_email(data: pd.Series) -> pd.Series:
     """
     
     email = data['email']
-    logging.info(f"Processing email: {email}")
+    logger.info(f"Processing email: {email}")
     result = None
     pattern = re.compile("([A-Za-z0-9]+[.\-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+")
         
     try:
         result = re.fullmatch(pattern, email).group()
     except Exception as e:
-        logging.error("Execption occurred", exc_info=True)
+        logger.error("Execption occurred", exc_info=True)
     finally:
-        logging.info(f"Email result: {result}")
+        logger.info(f"Email result: {result}")
         return result
 
 
@@ -108,7 +106,7 @@ def format_name(name: str) -> str:
     sub_pattern = re.compile(r"\.\ |\s")
                                     
     try:
-        logging.info(f"Processing name: {name}")
+        logger.info(f"Processing name: {name}")
         
         if re.findall(indian_patronymic, name):
             tmp = re.split(indian_patronymic, name)
@@ -121,7 +119,7 @@ def format_name(name: str) -> str:
         else:
             result = (" ".join(name.split()[1:]).lower(), name.split()[0].lower())
     except Exception as e:
-        logging.error("Execption occurred", exc_info=True)
+        logger.error("Execption occurred", exc_info=True)
     finally:
         logging.info(f"Name result: {result}")
         return result
@@ -145,7 +143,7 @@ def gen_member_id(data: pd.Series) -> pd.Series:
 
     last_name = data['last_name']
     dob = data['dob']
-    logging.info(f"Processing lastname: {last_name} and DoB: {dob}")
+    logger.info(f"Processing lastname: {last_name} and DoB: {dob}")
     result = None
         
     try:
@@ -153,7 +151,7 @@ def gen_member_id(data: pd.Series) -> pd.Series:
         dob_hash = sha256(dob.encode("utf-8")).hexdigest()
         result = f"{last_name}_{dob_hash[:5]}".strip()
     except Exception as e:
-        logging.error("Execption occurred", exc_info=True)
+        logger.error("Execption occurred", exc_info=True)
     finally:
-        logging.info(f"Membership ID result: {result}")
+        logger.info(f"Membership ID result: {result}")
         return result

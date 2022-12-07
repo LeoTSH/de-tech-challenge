@@ -26,6 +26,12 @@ Cleaned Dataset Columns:
 * last_name
 * member_id
 
+Usage:
+* Navigate to the section-1-data-pipelines folder
+    * `de-tech-challenge\section-1-data-pipelines`
+    * Run `python ./src/main.py` to generate the final dataets
+    * Run `pytest ./tests/unit_tests.py --cov-report html:./tests/results --cov=src` to generate the coverage and pytest results
+
 Assumptions:
 * Christian names are not used
 * For Chinese names: Surname (Last name) + Given name
@@ -37,8 +43,3 @@ Assumptions:
     * For example: Mohammad Rohan Bin Mohamamad Andika
         * Surname: Bin Mohamamad Andika, Given name: Mohammad Rohan
 * Formats and combinations of names are not exhaustive, an analysis of production data will be required to have a better picture
-
-
-
-
-
