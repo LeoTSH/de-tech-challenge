@@ -40,7 +40,7 @@ def check_mobile(data: pd.Series) -> pd.Series:
         pattern = re.compile(r"\+|\-|\s")
         mobile = re.sub(pattern=pattern, repl="", string=mobile)
         mobile = mobile if not mobile.startswith("65") else mobile[2:]
-        result = mobile if len(mobile) == 8 else "False"
+        result = mobile if len(mobile) == 8 else result
     except Exception as e:
         logger.error("Execption occurred", exc_info=True)
     finally:

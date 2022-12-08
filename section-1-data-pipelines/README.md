@@ -33,6 +33,15 @@ Usage:
     * Run `python ./src/main.py` to generate the final dataets
     * Run `pytest ./tests/unit_tests.py --cov-report html:./tests/results --cov=src` to generate the coverage and pytest results
 
+Scheduling:
+* Using crontab to schedule a cronjob with `0 */1 * * * python ./src/main.py`
+    * Note: Path is not accurate
+
+Airflow:
+* Reference: https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html
+
+Results:
+
 Assumptions:
 * Christian names are not used
 * For Chinese names: Surname (Last name) + Given name
@@ -46,6 +55,10 @@ Assumptions:
 * Formats and combinations of names are not exhaustive, an analysis of production data will be required to have a better picture
 * Log messages will be displayed on the terminal
 
+Improvements/TODO:
+* 
+
 Comments:
 * Jupyter notebook was used to develop the code and the finalized version copied to .py files
 * I had issues getting the logger to create the log filebut was able to via Jupyer notebook
+* venv

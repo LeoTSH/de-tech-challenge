@@ -1,6 +1,7 @@
 from utils import check_mobile, check_email, format_name, gen_member_id, logger
 import pandas as pd
 from datetime import datetime
+pd.options.mode.chained_assignment = None  # Default="warn"
 
 
 def main():
@@ -91,10 +92,15 @@ def main():
 
     # Saving final data                                           
     logger.info("Saving final data")
+    valid_data = valid_data[["member_id", "name", "first_name", "last_name", "above_18", "age", "dob", "mobile", "email"]]
     valid_data.to_csv("./data/cleaned_data/final_data.csv", ## UPDATE PATH HERE
         header=True,
         index=False,
     )
+
+    # Number of applications
+    logger.info(f"Number of successful applications: {valid_data.count()[0]}")
+    logger.info(f"Number of failed applications: {invalid_data.count()[0]}")
 
 if __name__ == "__main__":
     main()
