@@ -1,64 +1,44 @@
-Data Generation:
-* 100 rows of mock data were generated.
-* 10% of the data have empty names.
-* 20% of the data have errant emails (Empty or format issues)
+Overview
 
-Websites Used:
-* https://www.random-name-generator.com/: To generate fake names. Mix of Chinese Malay and Indian names
-* https://www.mockaroo.com/: To generate fake emails
-* https://www.coderstool.com/fake-test-identity-data: To generate mobile numbers
-* https://onlinerandomtools.com/generate-random-date: To generate birthdays
-* https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html: To run Airflow in Docker
+Data:
+* applications_dataset_1.csv and applications_dataset_2.csv from https://github.com/ameeraadam/Senior-DE-Tech-Challenge
 
 Mock Dataset Columns:
 * name
-* dob
-* mobile
 * email
+* date_of_birth
+* mobile_no
 
 Cleaned Dataset Columns:
+* member_id
 * name
-* age
-* above_18
-* dob
-* mobile
-* email
 * first_name
 * last_name
-* member_id
+* above_18
+* age
+* date_of_birth
+* mobile
+* email
 
 Usage:
 * Navigate to the section-1-data-pipelines folder
     * `de-tech-challenge\section-1-data-pipelines`
-    * Run `python ./src/main.py` to generate the final dataets
+    * Run `python ./src/main.py` to generate the final datasets
     * Run `pytest ./tests/unit_tests.py --cov-report html:./tests/results --cov=src` to generate the coverage and pytest results
+        * Navigate to `./tests/results/index.html` to view the results
 
 Scheduling:
 * Using crontab to schedule a cronjob with `0 */1 * * * python ./src/main.py`
-    * Note: Path is not accurate
 
 Airflow:
 * Reference: https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html
 
 Results:
+![Logs](./images/log_example.jpg)(Logs)
 
 Assumptions:
-* Christian names are not used
-* For Chinese names: Surname (Last name) + Given name
-    * For Example: Tan Ah Kow Andy
-        * Surname: Tan, Given name: Ah Kow
-* For Malay & Indian names: As they do not have familiy names, I've opted to denote/separate based on the patronymic terms (Bin, Binte, d/o, s/o)
-    * For example: Indra Venkiteswaran d/o P. Anand
-        * Surname: P. Anand, Given name: Indra Venkiteswaran
-    * For example: Mohammad Rohan Bin Mohamamad Andika
-        * Surname: Bin Mohamamad Andika, Given name: Mohammad Rohan
-* Formats and combinations of names are not exhaustive, an analysis of production data will be required to have a better picture
 * Log messages will be displayed on the terminal
-
-Improvements/TODO:
-* 
 
 Comments:
 * Jupyter notebook was used to develop the code and the finalized version copied to .py files
-* I had issues getting the logger to create the log filebut was able to via Jupyer notebook
-* venv
+* I had issues getting the logging function to save into log files hence, logs will be output to the terminal

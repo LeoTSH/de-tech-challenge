@@ -10,18 +10,14 @@ bleach==5.0.1
 cffi==1.15.1
 colorama==0.4.6
 comm==0.1.2
-contourpy==1.0.6
-cycler==0.11.0
 debugpy==1.6.4
 decorator==5.1.1
 defusedxml==0.7.1
 entrypoints==0.4
 executing==1.2.0
 fastjsonschema==2.16.2
-fonttools==4.38.0
 fqdn==1.5.1
 idna==3.4
-importlib-metadata==5.1.0
 ipykernel==6.19.2
 ipython==8.7.0
 ipython-genutils==0.2.0
@@ -41,9 +37,7 @@ jupyter_server==2.0.1
 jupyter_server_terminals==0.4.2
 jupyterlab-pygments==0.2.2
 jupyterlab-widgets==3.0.4
-kiwisolver==1.4.4
 MarkupSafe==2.1.1
-matplotlib==3.6.2
 matplotlib-inline==0.1.6
 mistune==2.0.4
 nbclassic==0.4.8
@@ -59,7 +53,6 @@ pandas==1.5.2
 pandocfilters==1.5.0
 parso==0.8.3
 pickleshare==0.7.5
-Pillow==9.3.0
 platformdirs==2.6.0
 prometheus-client==0.15.0
 prompt-toolkit==3.0.36
@@ -67,7 +60,6 @@ psutil==5.9.4
 pure-eval==0.2.2
 pycparser==2.21
 Pygments==2.13.0
-pyparsing==3.0.9
 pyrsistent==0.19.2
 python-dateutil==2.8.2
 python-json-logger==2.0.4
@@ -98,5 +90,3 @@ webcolors==1.12
 webencodings==0.5.1
 websocket-client==1.4.2
 widgetsnbextension==4.0.4
-xgboost==1.7.2
-zipp==3.11.0
