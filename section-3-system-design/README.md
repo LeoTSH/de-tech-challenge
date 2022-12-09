@@ -15,3 +15,4 @@ References:
 * https://stackoverflow.com/questions/29437650/how-can-i-ensure-that-a-materialized-view-is-always-up-to-date
 * https://aws.amazon.com/blogs/devops/multi-branch-codepipeline-strategy-with-event-driven-architecture/
 * https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
+* https://www.missioncloud.com/blog/amazon-ecs-vs-eks-which-service-is-right-for-you

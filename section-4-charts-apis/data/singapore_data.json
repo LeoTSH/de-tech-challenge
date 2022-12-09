@@ -12598,5 +12598,29 @@
         "Cases": 2174989,
         "Status": "confirmed",
         "Date": "2022-12-06T00:00:00Z"
+    },
+    {
+        "Country": "Singapore",
+        "CountryCode": "SG",
+        "Province": "",
+        "City": "",
+        "CityCode": "",
+        "Lat": "1.35",
+        "Lon": "103.82",
+        "Cases": 2176338,
+        "Status": "confirmed",
+        "Date": "2022-12-07T00:00:00Z"
+    },
+    {
+        "Country": "Singapore",
+        "CountryCode": "SG",
+        "Province": "",
+        "City": "",
+        "CityCode": "",
+        "Lat": "1.35",
+        "Lon": "103.82",
+        "Cases": 2177701,
+        "Status": "confirmed",
+        "Date": "2022-12-08T00:00:00Z"
     }
 ]
