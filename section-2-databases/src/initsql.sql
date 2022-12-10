@@ -1,4 +1,4 @@
-CREATE USER govtech;
+CREATE USER govtech WITH PASSWORD 'govtech';
 CREATE DATABASE govtech;
 GRANT ALL PRIVILEGES ON DATABASE govtech TO govtech;
 
@@ -32,8 +32,8 @@ CREATE TABLE IF NOT EXISTS govtech.transaction (
   "transaction_id" varchar(50),
   "member_id" varchar(50),
   "products_bought" varchar[],
-  "total_product_price" numeric[],
-  "total_product_weight" numeric[],
+  "total_product_price" numeric,
+  "total_product_weight" numeric,
   PRIMARY KEY ("transaction_id"),
   CONSTRAINT fk_customer
     FOREIGN KEY(member_id) 

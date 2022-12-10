@@ -17,8 +17,10 @@ Trains a XGBoost model to make the predictions.
 * A prediction is then made using the model and input data.
 
 ### **Assumptions:**
+* Class value is assumed to be acceptability.
 * The provided test data has only 5 columns.
 * I've opted to include the missing `Number of persons` feature with a value from the dataset.
+* All values in the test data are also changed to lowercase.
 ```
 Maintenance = High
 Number of doors = 4
