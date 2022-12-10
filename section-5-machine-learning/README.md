@@ -16,6 +16,10 @@ Trains a XGBoost model to make the predictions.
 * The best model from the Grid Search is then compared with against the baseline (Accuracy and F1-Score).
 * A prediction is then made using the model and input data.
 
+### **Results:**
+![Training](./images/training.jpg)
+![Test-prediction](./images/test-prediction.jpg)
+
 ### **Assumptions:**
 * Class value is assumed to be acceptability.
 * The provided test data has only 5 columns.

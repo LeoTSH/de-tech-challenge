@@ -16,3 +16,5 @@ Please kindly refer to the folders of each section for additional information (R
 * [section-3-system-design](./section-3-system-design/)
 * [section-4-charts-apis](./section-4-charts-apis/)
 * [section-5-machine-learning](./section-5-machine-learning/)
+
+Thank you for taking the time to setup the assessment and to review my submission.
